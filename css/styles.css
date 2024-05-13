@@ -43,3 +43,23 @@ p {
     filter: blur(10px);
     transition: filter 1s ease;
 }
+
+/* For vertical (portrait) orientation */
+@media (orientation: portrait) {
+    #video-container {
+        /* Adjust styling for vertical orientation */
+        width: 90vw;
+        top: 30vh;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* For horizontal (landscape) orientation */
+@media (orientation: landscape) {
+    #video-container {
+        /* Adjust styling for horizontal orientation */
+        width: 60vw;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
