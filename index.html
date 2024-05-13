@@ -20,15 +20,16 @@
     <header class="p-3 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <button onclick="" class="nav-link">
+                <button onclick="canviarInici();" class="nav-link">
                     <img src="img/logo.png" class="me-3" alt="Logotip de la pàgina. Un barret pirata i un mapa"
                         width="40px">
                 </button>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><button onclick="" class="nav-link px-2 text-white">Història de la pirateria</button></li>
-                    <li><button onclick="" class="nav-link px-2 text-white">Com vesteixen?</button></li>
-                    <li><button onclick="" class="nav-link px-2 text-white">Pirates famosos</button></li>
+                    <li><button id="li_inici" onclick="canviarInici();" class="nav-link px-2 text-secondary">Inici</button></li>
+                    <li><button id="li_historia" onclick="canviarHistoria();" class="nav-link px-2 text-white">Història de la pirateria</button></li>
+                    <li><button id="li_vestit" onclick="canviarVestit();" class="nav-link px-2 text-white">Com vesteixen?</button></li>
+                    <li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white">Pirates famosos</button></li>
                 </ul>
 
                 <div class="text-end">
@@ -52,7 +53,7 @@
                 <div class="modal-body">
                     <p class="text-align-justify">
                         Hem avisat al nostre servei de palomes missatgeres. En 10 dies laborables n'arribarà una perquè
-                        li puguis donar el missatge. La resposta arribarà en 20 dies laborables. El servei és pot veure
+                        li puguis donar el missatge. La resposta arribarà en 20 dies laborables. El servei es pot veure
                         alterat per qüestions meteorològiques <i class="fa-solid fa-cloud-rain"></i>
                     </p>
                     <p>
@@ -74,7 +75,7 @@
         </p>
         <div class="row mt-5 d-flex justify-content-center">
 
-            <div class="col-4 d-flex justify-content-center" onclick="">
+            <div class="col-4 d-flex justify-content-center" onclick="canviarHistoria();">
                 <div class="card" style="width: 18rem;">
                     <img src="img/historia.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -83,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="col-4 d-flex justify-content-center" onclick="">
+            <div class="col-4 d-flex justify-content-center" onclick="canviarVestit();">
                 <div class="card" style="width: 18rem;">
                     <img src="img/vestit.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -92,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="col-4 d-flex justify-content-center" onclick="">
+            <div class="col-4 d-flex justify-content-center" onclick="canviarFamosos();">
                 <div class="card" style="width: 18rem;">
                     <img src="img/famosos.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -101,6 +102,18 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container mt-4 p-5 d-none" id="pagina_historia">
+
+    </div>
+
+    <div class="container mt-4 p-5 d-none" id="pagina_vestit">
+
+    </div>
+
+    <div class="container mt-4 p-5 d-none" id="pagina_famosos">
+
     </div>
 
     <div class="pirate-container">
