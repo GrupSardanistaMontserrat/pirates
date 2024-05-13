@@ -17,109 +17,126 @@
 </head>
 
 <body>
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <button onclick="canviarInici();" class="nav-link">
-                    <img src="img/logo.png" class="me-3" alt="Logotip de la pàgina. Un barret pirata i un mapa"
-                        width="40px">
-                </button>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><button id="li_inici" onclick="canviarInici();" class="nav-link px-2 text-secondary">Inici</button></li>
-                    <li><button id="li_historia" onclick="canviarHistoria();" class="nav-link px-2 text-white">Història de la pirateria</button></li>
-                    <li><button id="li_vestit" onclick="canviarVestit();" class="nav-link px-2 text-white">Com vesteixen?</button></li>
-                    <li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white">Pirates famosos/es</button></li>
-                </ul>
+    <div id="overlay"></div>
 
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        <span>Contacta amb nosaltres</span>
+    <div id="video-container">
+        <video id="intro-video" controls>
+            <source src="img/pedro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="content">
+        <header class="p-3 text-bg-dark">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <button onclick="canviarInici();" class="nav-link">
+                        <img src="img/logo.png" class="me-3" alt="Logotip de la pàgina. Un barret pirata i un mapa"
+                            width="40px">
                     </button>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Servei de missatgeria palomil <i
-                            class="fa-solid fa-feather"></i></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-align-justify">
-                        Hem avisat al nostre servei de palomes missatgeres. En 10 dies laborables n'arribarà una perquè
-                        li puguis donar el missatge. La resposta arribarà en 20 dies laborables. El servei es pot veure
-                        alterat per qüestions meteorològiques <i class="fa-solid fa-cloud-rain"></i>
-                    </p>
-                    <p>
-                        Si ho prefereixes ens pots contactar a través de gsmcolonies@gmail.com :))
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><button id="li_inici" onclick="canviarInici();"
+                                class="nav-link px-2 text-secondary">Inici</button></li>
+                        <li><button id="li_historia" onclick="canviarHistoria();"
+                                class="nav-link px-2 text-white">Història de la pirateria</button></li>
+                        <li><button id="li_vestit" onclick="canviarVestit();" class="nav-link px-2 text-white">Com
+                                vesteixen?</button></li>
+                        <li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white">Pirates
+                                famosos/es</button></li>
+                    </ul>
 
-    <div class="container mt-4 p-5" id="pagina_inici">
-        <p>
-            Benvingudes i benvinguts al món de la pirateria, un món tan fascinant com temible. És un món que ha estat al
-            cor d'innombrables contes d'aventures a alta mar, valentia d'esbarjo, pirates valents i tresors més enllà de
-            la imaginació.
-        </p>
-        <div class="row mt-5 d-flex justify-content-center">
-
-            <div class="col-4 d-flex justify-content-center" onclick="canviarHistoria();">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/historia.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-0">Història de la pirateria</h5>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            <span>Contacta amb nosaltres</span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </header>
 
-            <div class="col-4 d-flex justify-content-center" onclick="canviarVestit();">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/vestit.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-0">Com vesteixen?</h5>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Servei de missatgeria palomil <i
+                                class="fa-solid fa-feather"></i></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-4 d-flex justify-content-center" onclick="canviarFamosos();">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/famosos.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-0">Pirates famosos</h5>
+                    <div class="modal-body">
+                        <p class="text-align-justify">
+                            Hem avisat al nostre servei de palomes missatgeres. En 10 dies laborables n'arribarà una
+                            perquè
+                            li puguis donar el missatge. La resposta arribarà en 20 dies laborables. El servei es pot
+                            veure
+                            alterat per qüestions meteorològiques <i class="fa-solid fa-cloud-rain"></i>
+                        </p>
+                        <p>
+                            Si ho prefereixes ens pots contactar a través de gsmcolonies@gmail.com :))
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container mt-4 p-5" id="pagina_inici">
+            <p>
+                Benvingudes i benvinguts al món de la pirateria, un món tan fascinant com temible. És un món que ha
+                estat al
+                cor d'innombrables contes d'aventures a alta mar, valentia d'esbarjo, pirates valents i tresors més
+                enllà de
+                la imaginació.
+            </p>
+            <div class="row mt-5 d-flex justify-content-center">
+
+                <div class="col-4 d-flex justify-content-center" onclick="canviarHistoria();">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/historia.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-0">Història de la pirateria</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4 d-flex justify-content-center" onclick="canviarVestit();">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/vestit.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-0">Com vesteixen?</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4 d-flex justify-content-center" onclick="canviarFamosos();">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/famosos.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-0">Pirates famosos</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4 p-5 d-none" id="pagina_historia">
+
+        </div>
+
+        <div class="container mt-4 p-5 d-none" id="pagina_vestit">
+
+        </div>
+
+        <div class="container mt-4 p-5 d-none" id="pagina_famosos">
+
+        </div>
+
     </div>
 
-    <div class="container mt-4 p-5 d-none" id="pagina_historia">
-
-    </div>
-
-    <div class="container mt-4 p-5 d-none" id="pagina_vestit">
-
-    </div>
-
-    <div class="container mt-4 p-5 d-none" id="pagina_famosos">
-
-    </div>
-
-    <div class="pirate-container">
-        <img src="img/bird-dancing.gif" alt="El cap d'un ocell vestit de pirata que dona voltes" class="pirate"
-            id="pirate">
-    </div>
 
 </body>
 

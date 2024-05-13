@@ -1,9 +1,24 @@
-window.onload = (event) => {
-    const pirate = document.getElementById('pirate');
-    pirate.addEventListener('click', () => {
-        pirate.style.display = "none";
+document.addEventListener("DOMContentLoaded", function() {
+    var video = document.getElementById("intro-video");
+    var content = document.getElementById("content");
+    var overlay = document.getElementById("overlay");
+
+    video.addEventListener("ended", function() {
+        closeVideo();
     });
-};
+
+    overlay.addEventListener("click", function() {
+        closeVideo();
+    });
+
+    function closeVideo() {
+        video.style.display = "none";
+        overlay.style.display = "none";
+        content.style.filter = "none";
+        content.style.display = "block";
+    }
+});
+
 
 
 function canviarInici() {
