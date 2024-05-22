@@ -342,15 +342,40 @@ function drawIncorrectArea(x, y) {
     ctx.fillRect(x - 10, y - 10, 20, 20); // Dibuixar un quadrat al voltant del punt de clic
 }
 
-// Event listener per fer clic al canvas
-canvas.addEventListener('click', function(event) {
+// Funció que es crida quan es fa clic al canvas o es toca en dispositius mòbils
+function handleClickOrTouch(event) {
     if (!treasureFound) {
         const rect = canvas.getBoundingClientRect();
-        const clickX = event.clientX - rect.left;
-        const clickY = event.clientY - rect.top;
-        handleClick(clickX, clickY);
+        let x, y;
+        if (event.type === 'click') {
+            x = event.clientX - rect.left;
+            y = event.clientY - rect.top;
+        } else if (event.type === 'touchstart') {
+            // Prevenir comportament per defecte de la pàgina
+            event.preventDefault();
+            // Calcular les coordenades relatives al canvas
+            const touch = event.touches[0] || event.changedTouches[0];
+            const offsetX = touch.pageX - rect.left;
+            const offsetY = touch.pageY - rect.top;
+            // Calcular el factor d'escalat del canvas
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            // Aplicar l'escalat a les coordenades
+            x = offsetX * scaleX;
+            y = offsetY * scaleY;
+        }
+        handleClick(x, y);
     }
-});
+}
+
+// Event listener per fer clic al canvas (per a ratolí)
+canvas.addEventListener('click', handleClickOrTouch);
+
+// Event listener per tocar el canvas (per a dispositius tàctils)
+canvas.addEventListener('touchstart', handleClickOrTouch);
+
+
+
 
 // Funció que es crida quan es fa clic al canvas
 function handleClick(x, y) {
