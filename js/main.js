@@ -370,11 +370,8 @@ function handleClickOrTouch(event) {
 
 // Event listener per fer clic al canvas (per a ratolí)
 canvas.addEventListener('click', handleClickOrTouch);
-
 // Event listener per tocar el canvas (per a dispositius tàctils)
 canvas.addEventListener('touchstart', handleClickOrTouch);
-
-
 
 
 // Funció que es crida quan es fa clic al canvas
@@ -385,7 +382,7 @@ function handleClick(x, y) {
         drawTreasure(treasureX, treasureY);
         document.getElementById('hint').textContent = 'Felicitats! Has trobat el tresor pirata!';
         treasureFound = true;
-        document.getElementById('restartButton').style.display = 'block';
+        document.getElementById('restartButton').style.visibility = 'visible';
     } else {
         // Marcar l'àrea incorrecta
         drawIncorrectArea(x, y);
@@ -413,7 +410,7 @@ document.getElementById('restartButton').addEventListener('click', function() {
     treasureY = Math.random() * 400; // Posició aleatòria
     drawMap();
     document.getElementById('hint').textContent = '';
-    document.getElementById('restartButton').style.display = 'none';
+    document.getElementById('restartButton').style.visibility = 'hidden';
 });
 
 // Dibuixar el mapa inicial
