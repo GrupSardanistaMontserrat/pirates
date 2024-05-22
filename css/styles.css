@@ -25,6 +25,19 @@ p {
     margin-right: auto;
 }
 
+
+
+.custom-div {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    word-wrap: break-word; /* Permet que el text es trenqui dins del contorn */
+}
+.custom-div i {
+    margin-right: 5px; /* Espai entre la icona i el text */
+}
+
 /* Estils per la pàgina de vestit */
 #pagina_vestit img {
     width: 100%;
