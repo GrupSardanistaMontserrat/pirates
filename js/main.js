@@ -394,7 +394,7 @@ function handleClick(x, y) {
             hint += 'Estàs molt a prop del tresor.';
         } else {
             if (Math.abs(x - treasureX) < 30) { // Si el clic està a prop del tresor en l'eix x
-                hint += '<i class="fa-solid fa-grip-lines"></i> Continua en el mateix eix X, ';
+                hint += '<i class="fa-solid fa-grip-lines-vertical"></i> Continua en el mateix eix Y, ';
             } else {
                 if (x < treasureX) {
                     hint += '<i class="fas fa-arrow-right"></i> Més a la dreta del mapa, ';
@@ -404,7 +404,7 @@ function handleClick(x, y) {
             }
 
             if (Math.abs(y - treasureY) < 30) { // Si el clic està a prop del tresor en l'eix y
-                hint += '<i class="fa-solid fa-grip-lines-vertical"></i> Continua en el mateix eix Y.';
+                hint += '<i class="fa-solid fa-grip-lines"></i> Continua en el mateix eix X.';
             } else {
                 if (y < treasureY) {
                     hint += '<i class="fas fa-arrow-down"></i> Més avall del mapa.';
