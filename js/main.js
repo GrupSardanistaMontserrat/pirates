@@ -389,17 +389,33 @@ function handleClick(x, y) {
 
         // Indicar direcció aproximada
         let hint = '';
-        if (x < treasureX) {
-            hint += 'Més a la dreta ';
+
+        if (Math.abs(x - treasureX) < 30 && Math.abs(y - treasureY) < 30) { // Si el clic està a prop del tresor en ambdós eixos
+            hint += 'Estàs molt a prop del tresor.';
         } else {
-            hint += 'Més a l\'esquerra ';
+            if (Math.abs(x - treasureX) < 30) { // Si el clic està a prop del tresor en l'eix x
+                hint += '<i class="fa-solid fa-grip-lines"></i> Continua en el mateix eix X, ';
+            } else {
+                if (x < treasureX) {
+                    hint += '<i class="fas fa-arrow-right"></i> Més a la dreta del mapa, ';
+                } else {
+                    hint += '<i class="fas fa-arrow-left"></i> Més a l\'esquerra del mapa, ';
+                }
+            }
+
+            if (Math.abs(y - treasureY) < 30) { // Si el clic està a prop del tresor en l'eix y
+                hint += '<i class="fa-solid fa-grip-lines-vertical"></i> Continua en el mateix eix Y.';
+            } else {
+                if (y < treasureY) {
+                    hint += '<i class="fas fa-arrow-down"></i> Més avall del mapa.';
+                } else {
+                    hint += '<i class="fas fa-arrow-up"></i> Més amunt del mapa.';
+                }
+            }
         }
-        if (y < treasureY) {
-            hint += 'i més avall del mapa.';
-        } else {
-            hint += 'i més a dalt del mapa.';
-        }
-        document.getElementById('hint').textContent = hint;
+
+        document.getElementById('hint').innerHTML = hint;
+
     }
 }
 
