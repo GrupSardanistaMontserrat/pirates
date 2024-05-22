@@ -26,6 +26,7 @@ function canviarInici() {
     let historia = document.getElementById("pagina_historia");
     let vestit = document.getElementById("pagina_vestit");
     let famosos = document.getElementById("pagina_famosos");
+    let joc = document.getElementById("pagina_joc");
 
     inici.style.display = "block";
     inici.classList.remove("d-none");
@@ -35,11 +36,14 @@ function canviarInici() {
     vestit.classList.add("d-none");
     famosos.style.display = "none";
     famosos.classList.add("d-none");
+    joc.style.display = "none";
+    joc.classList.add("d-none");
 
     let li_inici = document.getElementById("li_inici");
     let li_historia = document.getElementById("li_historia");
     let li_vestit = document.getElementById("li_vestit");
     let li_famosos = document.getElementById("li_famosos");
+    let li_joc = document.getElementById("li_joc");
 
     li_inici.classList.remove("text-white");
     li_inici.classList.add("text-secondary");
@@ -49,6 +53,8 @@ function canviarInici() {
     li_vestit.classList.add("text-white");
     li_famosos.classList.remove("text-secondary");
     li_famosos.classList.add("text-white");
+    li_joc.classList.remove("text-secondary");
+    li_joc.classList.add("text-white");
 }
 
 function canviarHistoria() {
@@ -56,6 +62,7 @@ function canviarHistoria() {
     let historia = document.getElementById("pagina_historia");
     let vestit = document.getElementById("pagina_vestit");
     let famosos = document.getElementById("pagina_famosos");
+    let joc = document.getElementById("pagina_joc");
 
     inici.style.display = "none";
     inici.classList.add("d-none");
@@ -65,11 +72,14 @@ function canviarHistoria() {
     vestit.classList.add("d-none");
     famosos.style.display = "none";
     famosos.classList.add("d-none");
+    joc.style.display = "none";
+    joc.classList.add("d-none");
 
     let li_inici = document.getElementById("li_inici");
     let li_historia = document.getElementById("li_historia");
     let li_vestit = document.getElementById("li_vestit");
     let li_famosos = document.getElementById("li_famosos");
+    let li_joc = document.getElementById("li_joc");
 
     li_historia.classList.remove("text-white");
     li_historia.classList.add("text-secondary");
@@ -79,6 +89,8 @@ function canviarHistoria() {
     li_vestit.classList.add("text-white");
     li_famosos.classList.remove("text-secondary");
     li_famosos.classList.add("text-white");
+    li_joc.classList.remove("text-secondary");
+    li_joc.classList.add("text-white");
 }
 
 function canviarVestit() {
@@ -86,6 +98,7 @@ function canviarVestit() {
     let historia = document.getElementById("pagina_historia");
     let vestit = document.getElementById("pagina_vestit");
     let famosos = document.getElementById("pagina_famosos");
+    let joc = document.getElementById("pagina_joc");
 
     inici.style.display = "none";
     inici.classList.add("d-none");
@@ -95,11 +108,14 @@ function canviarVestit() {
     vestit.classList.remove("d-none");
     famosos.style.display = "none";
     famosos.classList.add("d-none");
+    joc.style.display = "none";
+    joc.classList.add("d-none");
 
     let li_inici = document.getElementById("li_inici");
     let li_historia = document.getElementById("li_historia");
     let li_vestit = document.getElementById("li_vestit");
     let li_famosos = document.getElementById("li_famosos");
+    let li_joc = document.getElementById("li_joc");
 
     li_vestit.classList.remove("text-white");
     li_vestit.classList.add("text-secondary");
@@ -109,6 +125,8 @@ function canviarVestit() {
     li_historia.classList.add("text-white");
     li_famosos.classList.remove("text-secondary");
     li_famosos.classList.add("text-white");
+    li_joc.classList.remove("text-secondary");
+    li_joc.classList.add("text-white");
 }
 
 function canviarFamosos() {
@@ -116,6 +134,7 @@ function canviarFamosos() {
     let historia = document.getElementById("pagina_historia");
     let vestit = document.getElementById("pagina_vestit");
     let famosos = document.getElementById("pagina_famosos");
+    let joc = document.getElementById("pagina_joc");
 
     inici.style.display = "none";
     inici.classList.add("d-none");
@@ -125,11 +144,14 @@ function canviarFamosos() {
     vestit.classList.add("d-none");
     famosos.style.display = "block";
     famosos.classList.remove("d-none");
+    joc.style.display = "none";
+    joc.classList.add("d-none");
 
     let li_inici = document.getElementById("li_inici");
     let li_historia = document.getElementById("li_historia");
     let li_vestit = document.getElementById("li_vestit");
     let li_famosos = document.getElementById("li_famosos");
+    let li_joc = document.getElementById("li_joc");
 
     li_famosos.classList.remove("text-white");
     li_famosos.classList.add("text-secondary");
@@ -139,7 +161,49 @@ function canviarFamosos() {
     li_historia.classList.add("text-white");
     li_vestit.classList.remove("text-secondary");
     li_vestit.classList.add("text-white");
+    li_joc.classList.remove("text-secondary");
+    li_joc.classList.add("text-white");
 }
+
+function canviarJoc() {
+    let inici = document.getElementById("pagina_inici");
+    let historia = document.getElementById("pagina_historia");
+    let vestit = document.getElementById("pagina_vestit");
+    let famosos = document.getElementById("pagina_famosos");
+    let joc = document.getElementById("pagina_joc");
+
+    inici.style.display = "none";
+    inici.classList.add("d-none");
+    historia.style.display = "none";
+    historia.classList.add("d-none");
+    vestit.style.display = "none";
+    vestit.classList.add("d-none");
+    famosos.style.display = "none";
+    famosos.classList.add("d-none");
+    joc.style.display = "block";
+    joc.classList.remove("d-none");
+
+    let li_inici = document.getElementById("li_inici");
+    let li_historia = document.getElementById("li_historia");
+    let li_vestit = document.getElementById("li_vestit");
+    let li_famosos = document.getElementById("li_famosos");
+    let li_joc = document.getElementById("li_joc");
+
+    li_joc.classList.remove("text-white");
+    li_joc.classList.add("text-secondary");
+    li_famosos.classList.remove("text-secondary");
+    li_famosos.classList.add("text-white");
+    li_inici.classList.remove("text-secondary");
+    li_inici.classList.add("text-white");
+    li_historia.classList.remove("text-secondary");
+    li_historia.classList.add("text-white");
+    li_vestit.classList.remove("text-secondary");
+    li_vestit.classList.add("text-white");
+}
+
+
+
+
 
 function canviarInfluencia() {
     let influencia = document.getElementById("subpagina_historia_influencia");
@@ -228,3 +292,104 @@ function canviarModern() {
     div_antiga.classList.remove("border-danger", "text-danger");
     div_or.classList.remove("border-danger", "text-danger");
 }
+
+
+
+
+
+// PANTALLA DE JOC
+
+let treasureFound = false;
+
+// Coordenades del tresor (exemple)
+let treasureX = Math.random() * 400; // Posició aleatòria
+let treasureY = Math.random() * 400; // Posició aleatòria
+
+const canvas = document.getElementById('mapCanvas');
+const ctx = canvas.getContext('2d');
+
+// Dibuixar el mapa pre-dibujat
+function drawMap() {
+    // Dibuixar el terra
+    ctx.fillStyle = '#E0CDA9'; // Color del terra
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Dibuixar línies que representen el terreny i el mar
+    ctx.beginPath();
+    for (let y = 0; y < canvas.height; y += 10) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+    }
+    for (let x = 0; x < canvas.width; x += 10) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+    }
+    ctx.strokeStyle = '#B5651D'; // Color del terreny
+    ctx.stroke();
+}
+
+// Dibuixar el tresor
+function drawTreasure(x, y) {
+    ctx.fillStyle = 'gold'; // Color del tresor
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI * 2); // Dibuixar un cercle per representar el tresor
+    ctx.fill();
+}
+
+// Dibuixar l'àrea incorrecta
+function drawIncorrectArea(x, y) {
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; // Vermell semitransparent
+    ctx.fillRect(x - 10, y - 10, 20, 20); // Dibuixar un quadrat al voltant del punt de clic
+}
+
+// Event listener per fer clic al canvas
+canvas.addEventListener('click', function(event) {
+    if (!treasureFound) {
+        const rect = canvas.getBoundingClientRect();
+        const clickX = event.clientX - rect.left;
+        const clickY = event.clientY - rect.top;
+        handleClick(clickX, clickY);
+    }
+});
+
+// Funció que es crida quan es fa clic al canvas
+function handleClick(x, y) {
+    const distance = Math.sqrt(Math.pow(x - treasureX, 2) + Math.pow(y - treasureY, 2));
+    if (distance < 30) { // Ajusta el radi de detecció del tresor segons el teu mapa
+        // Mostrar el tresor
+        drawTreasure(treasureX, treasureY);
+        document.getElementById('hint').textContent = 'Felicitats! Has trobat el tresor pirata!';
+        treasureFound = true;
+        document.getElementById('restartButton').style.display = 'block';
+    } else {
+        // Marcar l'àrea incorrecta
+        drawIncorrectArea(x, y);
+
+        // Indicar direcció aproximada
+        let hint = '';
+        if (x < treasureX) {
+            hint += 'Més a la dreta ';
+        } else {
+            hint += 'Més a l\'esquerra ';
+        }
+        if (y < treasureY) {
+            hint += 'i més avall del mapa.';
+        } else {
+            hint += 'i més a dalt del mapa.';
+        }
+        document.getElementById('hint').textContent = hint;
+    }
+}
+
+// Event listener per reiniciar el joc
+document.getElementById('restartButton').addEventListener('click', function() {
+    treasureFound = false;
+    treasureX = Math.random() * 400; // Posició aleatòria
+    treasureY = Math.random() * 400; // Posició aleatòria
+    drawMap();
+    document.getElementById('hint').textContent = '';
+    document.getElementById('restartButton').style.display = 'none';
+});
+
+// Dibuixar el mapa inicial
+drawMap();

@@ -19,6 +19,59 @@ p {
 }
 
 
+#pagina_famosos img {
+    max-width: 200px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estils per la pàgina de vestit */
+#pagina_vestit img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#pagina_vestit h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+}
+
+#pagina_vestit p {
+    font-size: 1em;
+}
+
+
+/* PANTALLA DE JOC */
+#game-container {
+    text-align: center;
+    position: relative; /* Afegeixo posició relativa al contenidor del joc */
+}
+#mapCanvas {
+    border: 2px solid black; /* Afegim una vora per delimitar el camp de joc */
+    margin: 0 auto;
+    width: 80%; /* Utilitzem un ample del 80% de l'ample del contenidor */
+    max-width: 400px; /* Màxim ample de 400 píxels */
+}
+#restartButton {
+    margin-top: 10px;
+    width: 80%; /* Ampliem el botó */
+    max-width: 200px; /* Màxim ample de 200 píxels */
+}
+#game-title {
+    margin-bottom: 20px;
+}
+
+#hint {
+    text-align: center; /* Centrar el text horitzontalment */
+    margin-top: 10px; /* Ajustar l'espai superior */
+}
+
+
+
+
+
+
 #overlay {
     position: fixed;
     top: 0;
@@ -47,6 +100,8 @@ p {
     filter: blur(10px);
     transition: filter 1s ease;
 }
+
+
 
 /* For vertical (portrait) orientation */
 @media (orientation: portrait) {
