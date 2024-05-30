@@ -302,30 +302,24 @@ function canviarModern() {
 let treasureFound = false;
 
 // Coordenades del tresor (exemple)
-let treasureX = Math.random() * 400; // Posició aleatòria
+let treasureX = Math.random() * 600; // Posició aleatòria
 let treasureY = Math.random() * 400; // Posició aleatòria
 
 const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d');
 
+// Carregar i dibuixar la imatge de fons
+const backgroundImage = new Image();
+backgroundImage.src = 'img/mapa.png'; // Ruta a la teva imatge de fons
+backgroundImage.onload = function() {
+    drawMap();
+};
+
 // Dibuixar el mapa pre-dibujat
 function drawMap() {
-    // Dibuixar el terra
-    ctx.fillStyle = '#E0CDA9'; // Color del terra
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Dibuixar línies que representen el terreny i el mar
-    ctx.beginPath();
-    for (let y = 0; y < canvas.height; y += 10) {
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-    }
-    for (let x = 0; x < canvas.width; x += 10) {
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-    }
-    ctx.strokeStyle = '#B5651D'; // Color del terreny
-    ctx.stroke();
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before drawing
+    // Dibuixar la imatge de fons
+    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 }
 
 // Dibuixar el tresor
@@ -339,7 +333,7 @@ function drawTreasure(x, y) {
 // Dibuixar l'àrea incorrecta
 function drawIncorrectArea(x, y) {
     ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; // Vermell semitransparent
-    ctx.fillRect(x - 10, y - 10, 20, 20); // Dibuixar un quadrat al voltant del punt de clic
+    ctx.fillRect(x - 10, y - 10, 20, 20); // Dibuixar un quadrat centrat al voltant del punt de clic
 }
 
 // Funció que es crida quan es fa clic al canvas o es toca en dispositius mòbils
@@ -348,21 +342,15 @@ function handleClickOrTouch(event) {
         const rect = canvas.getBoundingClientRect();
         let x, y;
         if (event.type === 'click') {
-            x = event.clientX - rect.left;
-            y = event.clientY - rect.top;
+            x = (event.clientX - rect.left) * (canvas.width / rect.width);
+            y = (event.clientY - rect.top) * (canvas.height / rect.height);
         } else if (event.type === 'touchstart') {
             // Prevenir comportament per defecte de la pàgina
             event.preventDefault();
             // Calcular les coordenades relatives al canvas
             const touch = event.touches[0] || event.changedTouches[0];
-            const offsetX = touch.pageX - rect.left;
-            const offsetY = touch.pageY - rect.top;
-            // Calcular el factor d'escalat del canvas
-            const scaleX = canvas.width / rect.width;
-            const scaleY = canvas.height / rect.height;
-            // Aplicar l'escalat a les coordenades
-            x = offsetX * scaleX;
-            y = offsetY * scaleY;
+            x = (touch.clientX - rect.left) * (canvas.width / rect.width);
+            y = (touch.clientY - rect.top) * (canvas.height / rect.height);
         }
         handleClick(x, y);
     }
@@ -372,7 +360,6 @@ function handleClickOrTouch(event) {
 canvas.addEventListener('click', handleClickOrTouch);
 // Event listener per tocar el canvas (per a dispositius tàctils)
 canvas.addEventListener('touchstart', handleClickOrTouch);
-
 
 // Funció que es crida quan es fa clic al canvas
 function handleClick(x, y) {
@@ -415,14 +402,13 @@ function handleClick(x, y) {
         }
 
         document.getElementById('hint').innerHTML = hint;
-
     }
 }
 
 // Event listener per reiniciar el joc
 document.getElementById('restartButton').addEventListener('click', function() {
     treasureFound = false;
-    treasureX = Math.random() * 400; // Posició aleatòria
+    treasureX = Math.random() * 600; // Posició aleatòria
     treasureY = Math.random() * 400; // Posició aleatòria
     drawMap();
     document.getElementById('hint').textContent = '';
@@ -430,4 +416,4 @@ document.getElementById('restartButton').addEventListener('click', function() {
 });
 
 // Dibuixar el mapa inicial
-drawMap();
+backgroundImage.onload = drawMap;
