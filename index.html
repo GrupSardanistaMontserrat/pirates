@@ -39,7 +39,7 @@
                         <li><button id="li_inici" onclick="canviarInici();" class="nav-link px-2 text-secondary"><i class="fas fa-home"></i> Inici</button></li>
                         <li><button id="li_historia" onclick="canviarHistoria();" class="nav-link px-2 text-white"><i class="fas fa-book"></i> Història de la pirateria</button></li>
                         <li><button id="li_vestit" onclick="canviarVestit();" class="nav-link px-2 text-white"><i class="fas fa-tshirt"></i> Com vesteixen?</button></li>
-                        <li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white"><i class="fas fa-skull-crossbones"></i> Pirates famosos/es</button></li>
+                        <!--<li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white"><i class="fas fa-skull-crossbones"></i> Pirates famosos/es</button></li>-->
                         <li><button id="li_joc" onclick="canviarJoc();" class="nav-link px-2 text-white"><i class="fas fa-gamepad"></i> Joc pirata</button></li>
                     </ul>
 
@@ -80,14 +80,29 @@
             </div>
         </div>
 
+        <div class="modal fade" id="unknownModal" tabindex="-1" aria-labelledby="unknownModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="unknownModalLabel">Pròximament... <i class="fa-solid fa-exclamation"></i></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-align-justify">
+                            Hi estem treballant! En el futur et sorprendrem <i class="fa-regular fa-face-surprise"></i>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container mt-4 p-5" id="pagina_inici">
 
             <p>
-                Benvingudes i benvinguts al món de la pirateria, un món tan fascinant com temible. És un món que ha
-                estat al
-                cor d'innombrables contes d'aventures a alta mar, valentia d'esbarjo, pirates valents i tresors més
-                enllà de
-                la imaginació.
+                Benvingudes i benvinguts al món de la pirateria, un món tant fascinant com temible. És un món que ha estat al cor d'innombrables contes d'aventures a alta mar, valentia d'esbarjo, pirates valents/es i tresors més enllà de la imaginació.
             </p>
 
             <div class="overflow-auto mt-5">
@@ -97,23 +112,30 @@
                     <div class="card mb-3 mx-2" style="width: 18rem;" onclick="canviarHistoria();">
                         <img src="img/historia.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title text-center mb-0">Història de la pirateria</h5>
+                            <h6 class="card-title text-center mb-0">Història de la pirateria <i class="fas fa-book"></i></h6>
                         </div>
                     </div>
 
                     <div class="card mb-3 mx-2" style="width: 18rem;" onclick="canviarVestit();">
                         <img src="img/vestit.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title text-center mb-0">Com vesteixen?</h5>
+                            <h6 class="card-title text-center mb-0">Guia per vestir com pirates <i class="fas fa-tshirt"></i></h6>
                         </div>
                     </div>
 
-                    <div class="card mb-3 mx-2" style="width: 18rem;" onclick="canviarFamosos();">
+                    <div class="card mb-3 mx-2" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#unknownModal">
+                        <img src="img/unknown.png" class="card-img-top" alt="...">
+                        <div class="card-body border-top">
+                            <h6 class="card-title text-center mb-0">Pròximament... <i class="fa-solid fa-wheat-awn"></i></h6>
+                        </div>
+                    </div>
+
+                    <!--<div class="card mb-3 mx-2" style="width: 18rem;" onclick="canviarFamosos();">
                         <img src="img/famosos.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center mb-0">Pirates famosos</h5>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
@@ -143,7 +165,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 mb-3">
                     <div class="custom-div" onclick="canviarOr();" id="div_historia_or">
-                        <i class="fas fa-coins"></i> Era d'Or de la pirateria
+                        <i class="fas fa-coins"></i> Edat d'Or de la pirateria
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 mb-3">
@@ -295,27 +317,122 @@
         </div>
 
         <div class="container mt-4 p-5 d-none" id="pagina_vestit">
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <img src="path/to/image1.jpg" class="img-fluid" alt="Descripció de la imatge 1">
-                </div>
-                <div class="col-md-8">
-                    <h3>Estil de vestir 1</h3>
-                    <p>Descripció de com vesteixen els pirates en aquest estil...</p>
+            <div class="row">
+                <div class="alert alert-info" role="alert">
+                    <i class="fa-solid fa-fish"></i>
+                    Si algun/a infant no sap nedar o li agrada flotar sense esforç, complementàriament, pot portar maniguets, flotador, xurro, piscina 366x76 cm, llanxa no retornable...
+                    <i class="fa-solid fa-ship"></i>
                 </div>
             </div>
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <img src="path/to/image2.jpg" class="img-fluid" alt="Descripció de la imatge 2">
-                </div>
-                <div class="col-md-8">
-                    <h3>Estil de vestir 2</h3>
-                    <p>Descripció de com vesteixen els pirates en aquest estil...</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="container mt-4 p-5 d-none" id="pagina_famosos">
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 border-end text-center d-flex align-items-center justify-content-center">
+                    <div style="width: 100px;">
+                        <img src="img/pirata_garfi.png" class="img-fluid" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Capità Garfi</h3>
+                    <p class="d-flex align-items-center">
+                        El Capità Garfi, un pirata nascut a Cornualla, Anglaterra, al final del segle XVII. Va guanyar fama com un dels més temuts dels set mars. Reconegut per la seva mà dreta substituïda per un garfi, símbol de la seva destresa amb l'espasa, va enfrontar-se a Peter Pan en un duel èpic pel control dels oceans. Tot i la seva derrota davant del jove Peter Pan, el seu llegat perdura com un símbol de la lluita entre el bé i el mal.
+                    </p>
+                </div>
+            </div>            
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 300px;" src="img/pirata_one_piece.jpg" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Pirates de One Piece (Ruffy, Nami, Zoro...)</h3>
+                    <p class="d-flex align-items-center">
+                        Ruffy és un jove amb el somni de ser el Rei dels Pirates, té el poder dels "Gom Gom". Nami, la navegant, busca el mapa mundi complet. Zoro, un espadatxí hàbil, anhela esdevenir el millor espadatxí del món. Tots tres es reuneixen a bord del Straw Hat Pirates, en un viatge per trobar el One Piece, el tresor més gran del món, mentre enfronten enemics com els Marines i altres pirates, creant llaços de camaraderia i superant desafiaments perillosos en el seu camí cap a la grandesa.
+                    </p>
+                </div>
+            </div>     
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 300px;" src="img/pirata_jack.jpg" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Jack Sparrow</h3>
+                    <p class="d-flex align-items-center">
+                        Jack Sparrow és un pirata carismàtic, famós pels seus mètodes poc convencionals i el seu amor per la llibertat. Va néixer a l'època daurada de la pirateria, un marí expert amb una fascinació per les aventures i el tresor. Vesteix amb estil pirata amb una bandana. És un navegant hàbil al comandament del seu vaixell, la Perla Negra (que no pedra negra, parador reconegut per memorables aventures). Amb astúcia i humor, navega els set mars, enfrontant-se a enemics i buscant fortuna. La seva llegenda com a pirata astut i intrèpid el converteix en una figura mítica entre els corsaris i mariners de tot el món.
+                    </p>
+                </div>
+            </div>  
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 150px;" src="img/pirata_swann.jpg" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Elizabeth Swann</h3>
+                    <p class="d-flex align-items-center">
+                        Elizabeth Swann és una noble britànica de l'època daurada de la pirateria. Fillola del governador de Port Royal, creix amb una educació refinada, però anhela la llibertat del mar. Després de trobar-se amb el pirata Jack Sparrow i ser capturada pels pirates, descobreix la seva valentia i destresa en l'art de la navegació. Es converteix en una figura clau en les batalles entre pirates i forces britàniques, demostrant coratge i intel·ligència.
+                    </p>
+                </div>
+            </div>  
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 300px;" src="img/pirata_flint.webp" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Capità Flint</h3>
+                    <p class="d-flex align-items-center">
+                        El Capità Flint és una figura mítica de l'edat daurada de la pirateria, conegut per la seva ferocitat i intel·ligència. Originari de les Bahames, va esdevenir un pirata temut pels seus enemics i admirat pels seus seguidors. La seva fama es deu a raids audaços i la seva capacitat per amagar el seu tresor. Es diu que va deixar mapes encriptats per a futurs aventurers. Encara que les seves accions són envoltades de misteri i llegendes, la seva influència perdura en la narrativa pirata, inspirant temor i admiració en igual mesura.
+                    </p>
+                </div>
+            </div>  
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 200px;" src="img/pirata_hacker.jpg" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Pirata informàtic/a</h3>
+                    <p class="d-flex align-items-center">
+                        Un/a pirata informàtic/a és un/a expert/a en tecnologia que utilitza el seu coneixement per accedir a sistemes informàtics de manera no autoritzada, sigui per motius maliciosos o ètics. Poden explorar vulnerabilitats en xarxes, programari o maquinari per robar informació, interrompre operacions o causar danys. 
+                    </p>
+                    <p class="d-flex align-items-center">
+                        La seva vestimenta es caracteritza per incorporar diversos elements electrònics i informàtics: samarretes d'ordinadors, auriculars, un teclat, un ratolí...
+                    </p>
+                </div>
+            </div>  
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 pt-2 pb-2 border-end text-center d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center align-middle">
+                        <img style="width: 150px;" src="img/pirata_monitor.png" class="img-fluid mb-0" alt="Descripció de la imatge 1">
+                    </div>
+                </div>
+                <div class="col-md-8 p-1 ps-3 pe-3">
+                    <h3 class="mb-2">Monitor/a pirata</h3>
+                    <p class="d-flex align-items-center">
+                        En arribar a qualsevol estada, es retira el menjar de les motxilles per no atreure animals i bestioles de la natura que no voldríem a prop del nostre raspall de dents. És per això que monitors/es demanen als i a les infants que els donin el menjar sobrant del primer dia.
+                    </p>
+                    <p class="d-flex align-items-center">
+                        En alguns equips s'immisceixen monitors/es que aprofiten l'avinentesa per cruspir-se el quart de bossa de patates que algun infant confiat té l'esperança de recuperar passats 10 dies de colònies, segurament amb pitjor estat. Fet improbable si un monitor/a pirata s'ha colat a l'equip.
+                    </p>
+                    <p class="d-flex align-items-center">
+                        Habitualment vesteixen amb xandall, un desodorant en una mà i una bossa de patates a l'altra, perquè cap animal se les pugui cruspir abans que ells/es.
+                    </p>
+                    <p class="d-flex align-items-center" style = "font-size: 0.3em;">
+                        Exempció de responsabilitat
+                    </p>
+                </div>
+            </div>  
+        </div>
+        
+        
+
+        <!--<div class="container mt-4 p-5 d-none" id="pagina_famosos">
 
             <div class="row justify-content-center">
 
@@ -354,7 +471,7 @@
 
             </div>
 
-        </div>
+        </div>-->
 
         <div class="container mt-2 p-5 d-none text-center" id="pagina_joc">
 
@@ -362,8 +479,8 @@
 
             <div id="game-container">
                 <!-- Afegeixo el botó d'inici al HTML -->
-                <h1 id="game-title" class="mb-1">Cerca del Tresor Pirate</h1>
-                <button id="restartButton" class="btn btn-primary mt-0 mb-1" style="visibility: hidden;">Tornar a jugar</button>
+                <h1 id="game-title" class="mb-1">Cerca del Tresor Pirata <i class="fa-solid fa-gem"></i></h1>
+                <button id="restartButton" class="btn btn-primary mt-0 mb-1" style="visibility: hidden;">Tornar a jugar <i class="fa-solid fa-dice-d20"></i></button>
                 <p class="text-center">Fes clic al mapa per trobar el tresor!</p>
                 <canvas id="mapCanvas" width="600" height="400"></canvas>
                 <p id="hint"></p>
