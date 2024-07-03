@@ -41,6 +41,7 @@
                         <li><button id="li_vestit" onclick="canviarVestit();" class="nav-link px-2 text-white"><i class="fas fa-tshirt"></i> Com vesteixen?</button></li>
                         <!--<li><button id="li_famosos" onclick="canviarFamosos();" class="nav-link px-2 text-white"><i class="fas fa-skull-crossbones"></i> Pirates famosos/es</button></li>-->
                         <li><button id="li_joc" onclick="canviarJoc();" class="nav-link px-2 text-white"><i class="fas fa-gamepad"></i> Joc pirata</button></li>
+                        <li><button id="li_tresor" onclick="canviarTresor();" class="nav-link px-2 text-white"><i class="fa-solid fa-coins"></i> El tresor</button></li>
                     </ul>
 
                     <div class="text-end">
@@ -123,10 +124,10 @@
                         </div>
                     </div>
 
-                    <div class="card mb-3 mx-2" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#unknownModal">
-                        <img src="img/unknown.png" class="card-img-top" alt="...">
+                    <div class="card mb-3 mx-2" style="width: 18rem;" onclick="canviarTresor();">
+                        <img src="img/tresor2.jpg" class="card-img-top" alt="...">
                         <div class="card-body border-top">
-                            <h6 class="card-title text-center mb-0">Pròximament... <i class="fa-solid fa-wheat-awn"></i></h6>
+                            <h6 class="card-title text-center mb-0">El tresor <i class="fa-solid fa-coins"></i></h6>
                         </div>
                     </div>
 
@@ -488,6 +489,10 @@
 
 
 
+        </div>
+
+        <div class="container mt-2 p-5 d-none text-center" id="pagina_tresor">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rvcBCLviaDo?si=uM78eKramvkYdx8_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
 
